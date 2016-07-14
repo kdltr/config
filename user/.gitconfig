@@ -1,0 +1,10 @@
+[user]
+	name = Kooda
+	email = kooda@upyum.com
+[push]
+	default = simple
+[sendemail]
+	smtpserver = smtp.upyum.com
+	smtpserverport = 587
+	smtpencryption = tls
+	smtpuser = adrien
