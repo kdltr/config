@@ -1,6 +1,22 @@
 (use-modules (gnu) (gnu system nss))
-(use-service-modules networking)
-(use-package-modules certs xorg xdisorg fontutils fonts admin zsh suckless)
+(use-service-modules networking shepherd)
+(use-package-modules certs xorg xdisorg fontutils fonts admin zsh suckless linux)
+
+(define powertop-tuning-service-type
+  (shepherd-service-type
+   'powertop-tuning
+   (lambda _
+     (shepherd-service
+      (documentation "Auto-tune powertop tunables to increase battery life")
+      (provision '(powertop-tuning))
+      (start #~(lambda _
+                 (zero? (system* (string-append #$powertop "/sbin/powertop")
+                                 "--auto-tune"))))
+      (respawn? #f)))))
+
+(define (powertop-tuning-service)
+  (service powertop-tuning-service-type '()))
+
 
 (operating-system
  (host-name "stitch")
@@ -51,5 +67,6 @@
                          %setuid-programs))
 
  (services (cons* (console-keymap-service "fr-bepo")
+                  (powertop-tuning-service)
                   (dhcp-client-service)
                   %base-services)))
