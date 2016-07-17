@@ -1,0 +1,12 @@
+#!/bin/sh
+
+fetch_music() {
+    printf "♫ %s ♫" "$(mpc -q current)" >/tmp/current_music.txt;
+}
+    
+touch /tmp/current_music.txt
+fetch_music
+
+while mpc idle player >/dev/null; do
+    fetch_music
+done

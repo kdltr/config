@@ -1,0 +1,1 @@
+ffmpeg -f x11grab -framerate 60 -video_size 680x460 -i :0.0+620,292 -vcodec libx264 -preset ultrafast -qp 0 /tmp/capture.mkv
