@@ -10,3 +10,7 @@ export CHICKEN_DOC_COLORS=auto
 export CHICKEN_DOC_WRAP=76
 
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+
+if [ `hostname` = "stitch" ]; then
+    export ALSA_CARD=PCH
+fi
