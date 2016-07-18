@@ -93,6 +93,7 @@
        openssh
        patchelf
        pkg-config
+       redshift
        rsync
        rxvt-unicode
        scribus
