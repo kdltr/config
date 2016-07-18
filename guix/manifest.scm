@@ -33,6 +33,7 @@
  ssh
  suckless
  sxiv
+ tex
  version-control
  video
  wine
@@ -102,6 +103,7 @@
        strace
        sxiv
        synfigstudio
+       texlive
        transmission
        unzip
        wine

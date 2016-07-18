@@ -1,4 +1,4 @@
-(use-modules (gnu) (gnu system nss))
+(use-modules (gnu) (gnu system nss) (linux-nonlibre) (iwlwifi-firmware))
 (use-service-modules networking shepherd)
 (use-package-modules certs xorg xdisorg fontutils fonts admin zsh suckless linux)
 
@@ -30,6 +30,10 @@
                   #:extra-modules '("fuse")
                   rest)))
 
+ (kernel linux-nonlibre)
+
+ (firmware (cons* iwlwifi-firmware
+                  %base-firmware))
 
  (file-systems (cons* (file-system
                        (title 'label)
