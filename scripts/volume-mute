@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ `hostname` = crocmou ]; then
+    amixer sset PCM 0
+else
+    amixer sset Master toggle
+fi

@@ -44,7 +44,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -5
 bindsym XF86MonBrightnessUp exec xbacklight +5
 bindsym XF86AudioRaiseVolume exec volume-up 1
 bindsym XF86AudioLowerVolume exec volume-down 1
-bindsym XF86AudioMute exec amixer sset PCM 0
+bindsym XF86AudioMute exec exec volume-mute
 bindsym XF86AudioPlay exec mpc -h 192.168.0.50 toggle
 bindsym XF86AudioNext exec mpc -h 192.168.0.50 next
 bindsym XF86AudioPrev exec mpc -h 192.168.0.50 prev
