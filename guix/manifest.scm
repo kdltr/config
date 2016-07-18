@@ -43,7 +43,8 @@
  zsh)
 
 (packages->manifest
- (list alsa-utils
+ (list acpi
+       alsa-utils
        blender
        conkeror
        cpufrequtils
@@ -58,7 +59,7 @@
        font-gnu-freefont-ttf
        font-liberation
        font-terminus
-       gcc-toolchain-6
+       ;; gcc-toolchain-6
        gimp
        git
        glew
@@ -71,7 +72,7 @@
        i3-wm
        icecat
        inkscape
-       (make-libstdc++ gcc-6)
+       ;; (make-libstdc++ gcc-6)
        libx11
        libxcursor
        libxinerama
@@ -104,6 +105,7 @@
        transmission
        unzip
        wine
+       xbacklight
        xclip
        xinit
        xmodmap
