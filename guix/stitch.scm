@@ -14,9 +14,27 @@
                                  "--auto-tune"))))
       (respawn? #f)))))
 
+(define wpa-supplicant-service-type
+  (shepherd-service-type
+   'wpa-supplicant
+   (lambda (arg)
+     (let ((interface (car arg))
+           (config-file (cadr arg)))
+      (shepherd-service
+       (documentation "WiFi association daemon")
+       (provision '(wpa-supplicant))
+       (start #~(make-forkexec-constructor
+                 (list (string-append #$wpa-supplicant-minimal "/sbin/wpa_supplicant")
+                       "-i" #$interface
+                       "-c" #$config-file)))
+       (stop #~(make-kill-destructor))
+       (respawn? #t))))))
+
 (define (powertop-tuning-service)
   (service powertop-tuning-service-type '()))
 
+(define (wpa-supplicant-service interface config-file)
+  (service wpa-supplicant-service-type (list interface config-file)))
 
 (operating-system
  (host-name "stitch")
@@ -63,7 +81,7 @@
  (packages (cons* nss-certs             ;for HTTPS access
                   xorg-server xf86-video-intel xf86-input-libinput
                   fontconfig font-alias font-adobe75dpi font-terminus font-dejavu font-misc-misc
-                  slock
+                  slock wpa-supplicant-minimal
                   %base-packages))
 
  (setuid-programs (cons* #~(string-append #$xorg-server "/bin/Xorg")
@@ -72,5 +90,6 @@
 
  (services (cons* (console-keymap-service "fr-bepo")
                   (powertop-tuning-service)
+                  (wpa-supplicant-service "wlp3s0" "/etc/wpa_supplicant.conf")
                   (dhcp-client-service)
                   %base-services)))
