@@ -103,7 +103,7 @@
        sshfs-fuse
        strace
        sxiv
-       synfigstudio
+       ;; synfigstudio
        texlive
        transmission
        unzip
