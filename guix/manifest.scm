@@ -8,6 +8,7 @@
  commencement
  conkeror
  curl
+ dns
  elf
  emacs
  feh
@@ -46,6 +47,7 @@
 (packages->manifest
  (list acpi
        alsa-utils
+       bind-utils
        blender
        conkeror
        cpufrequtils
@@ -69,6 +71,7 @@
        graphviz
        gs-fonts
        htop
+       hydrogen
        i3status
        i3-wm
        icecat
@@ -92,6 +95,7 @@
        obs
        openssh
        patchelf
+       pd
        pkg-config
        redshift
        rsync
@@ -102,6 +106,7 @@
        soil
        sshfs-fuse
        strace
+       subversion
        sxiv
        ;; synfigstudio
        texlive
