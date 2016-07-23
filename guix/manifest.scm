@@ -1,4 +1,4 @@
-(use-modules (glfw))
+(use-modules (glfw) (autocutsel))
 
 (use-package-modules
  admin
@@ -47,6 +47,7 @@
 (packages->manifest
  (list acpi
        alsa-utils
+       autocutsel
        bind-utils
        blender
        conkeror
