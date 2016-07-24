@@ -110,6 +110,7 @@
        subversion
        sxiv
        ;; synfigstudio
+       taskwarrior
        texlive
        transmission
        unzip

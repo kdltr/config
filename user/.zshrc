@@ -39,3 +39,14 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 alias csd='chicken-doc'
 alias remote='transmission-remote 192.168.0.50'
+
+alias t="task"
+alias dailies="task project:quotidiennes due:today"
+alias next="task limit:7 next"
+
+echo "========== Remaining dailies"
+dailies
+
+echo
+echo "========== Most urgent tasks"
+next
