@@ -185,7 +185,7 @@ for SYSTEM and optionally VARIANT, or #f if there is no such configuration."
 
 
 (define-public linux-nonlibre
-  (let* ((version "4.6.3")
+  (let* ((version "4.6.4")
          (build-phase
           '(lambda* (#:key system inputs #:allow-other-keys #:rest args)
              ;; Avoid introducing timestamps
@@ -267,7 +267,7 @@ for SYSTEM and optionally VARIANT, or #f if there is no such configuration."
              (uri (linux-nonlibre-urls version))
              (sha256
               (base32
-               "0rq9cciabw5gfi2z30fcwh6z4zm2fgp938xmblfw59hyjj98h60k"))))
+               "0zpz29hgwdwkil6rakn08bdq77qjcz8q18qlkfc43s84f4fd8s45"))))
     (build-system gnu-build-system)
     (supported-systems '("x86_64-linux" "i686-linux"))
     (outputs '("out" "full"))
