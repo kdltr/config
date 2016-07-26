@@ -124,5 +124,6 @@
        xrdb
        xsensors
        xset
+       xterm
        youtube-dl
        zsh))

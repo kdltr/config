@@ -5,32 +5,36 @@
 *internalBorder:       0
 urxvt*font: xft:Terminus:size=8
 
-urxvt*background: #000000
-urxvt*foreground: #ffffff
-urxvt*color0: #000000
-urxvt*color1: #cc0000
-urxvt*color2: #4e9a06
-urxvt*color3: #c4a000
-urxvt*color4: #3465a4
-urxvt*color5: #75507b
-urxvt*color6: #06989a
-urxvt*color7: #d3d7cf
-urxvt*color8: #555753
-urxvt*color9: #ef2929
-urxvt*color10: #8ae234
-urxvt*color11: #fce94f
-urxvt*color12: #739fcf
-urxvt*color13: #ad7fa8
-urxvt*color14: #34e2e2
-urxvt*color15: #eeeeec
+! urxvt*background: #000000
+! urxvt*foreground: #ffffff
+! urxvt*color0: #000000
+! urxvt*color1: #cc0000
+! urxvt*color2: #4e9a06
+! urxvt*color3: #c4a000
+! urxvt*color4: #3465a4
+! urxvt*color5: #75507b
+! urxvt*color6: #06989a
+! urxvt*color7: #d3d7cf
+! urxvt*color8: #555753
+! urxvt*color9: #ef2929
+! urxvt*color10: #8ae234
+! urxvt*color11: #fce94f
+! urxvt*color12: #739fcf
+! urxvt*color13: #ad7fa8
+! urxvt*color14: #34e2e2
+! urxvt*color15: #eeeeec
 
 ! xterm specific options
 xterm*termName:        xterm-256color
+xterm*locale:          true
 xterm*bellIsUrgent:    true
 xterm*iconBorderWidth: 0
+xterm*borderWidth:     0
 xterm*altIsNotMeta:    true
 xterm*altSendsEscape:  true
 xterm*utf8:            2
+xterm*reverseVideo:    on
+xterm*faceName:        Terminus:size=8
 
 ! urxvt specific options
 urxvt*urgentOnBell:    true
