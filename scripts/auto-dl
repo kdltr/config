@@ -4,4 +4,4 @@ if [ "$1" = "-p" ]; then
 	export proxy="--proxy localhost:1080"
 fi
 
-youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s" -a - $proxy
+youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s" --write-sub -a - $proxy
