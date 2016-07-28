@@ -41,6 +41,7 @@
  wm
  xdisorg
  xorg
+ youtube-dl
  zip
  zsh)
 
@@ -125,5 +126,5 @@
        xsensors
        xset
        xterm
-       youtube-dl
+       youtube-dl-newer
        zsh))
