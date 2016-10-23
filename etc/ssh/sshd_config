@@ -1,0 +1,17 @@
+#Port 22
+Protocol 2
+
+# Disable weak crypto
+KexAlgorithms curve25519-sha256@libssh.org
+HostKey /etc/ssh/ssh_host_ed25519_key
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes256-ctr
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-ripemd160-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,umac-128@openssh.com
+
+# Only allow users from the ssh-user group, and only support public key authentication
+AllowGroups ssh-user
+PubkeyAuthentication yes
+AuthorizedKeysFile	.ssh/authorized_keys
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+
+Subsystem	sftp	/usr/lib/ssh/sftp-server
