@@ -1,3 +1,5 @@
+. $HOME/.env
+
 alsactl -f ~/.alsa_state restore
 
 pgrep ssh-agent || exec ssh-agent $SHELL -l
