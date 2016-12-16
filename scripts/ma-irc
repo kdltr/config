@@ -1,0 +1,40 @@
+#!/bin/sh
+
+set -x
+
+# Start up Tabbed
+tmp=`mktemp -u`
+mkfifo $tmp
+tabbed -c >$tmp &
+TABBED_PID=$!
+read XID <$tmp
+rm $tmp
+
+open_ma() {
+    DIR=$1
+    cd $DIR
+    WIN_NAME=`basename $PWD`
+    TERM=dumb ma -use $XID -- -eval 'source ~/code/ma/utils/irc.tcl' -scroll -win irc-read -n +1 -f out &
+    echo MA-$! >MA
+}
+
+irc_dirs() {
+    find /tmp/irc -type d | tail -n +2
+}
+
+# initial startup
+irc_dirs | while read DIR; do
+    open_ma $DIR
+done
+
+while true; do
+    (echo /tmp/irc; irc_dirs) | entr -d false
+    irc_dirs | while read DIR; do
+        test -f $DIR/MA || open_ma $DIR
+    done
+done &
+
+WAITER_PID=$!
+
+wait $TABBED_PID
+kill $WAITER_PID
