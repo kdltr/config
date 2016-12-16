@@ -8,3 +8,8 @@
 	smtpserverport = 587
 	smtpencryption = tls
 	smtpuser = adrien
+[alias]
+	ci = commit
+	co = checkout
+	br = branch
+	st = status
