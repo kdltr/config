@@ -4,7 +4,7 @@ set -x -e
 
 ZNCPASS=`pee -p znc`
 
-NETWORKS="elynx freenode furnet"
+NETWORKS=`test -z $1 && echo elynx freenode furnet || echo $1`
 
 for net in $NETWORKS; do
     IIPASS="Kooda/$net:$ZNCPASS" ii -i /tmp/irc -s localhost -d "$net" -p 8350 -n Kooda -k IIPASS &
