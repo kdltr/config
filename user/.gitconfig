@@ -8,6 +8,8 @@
 	smtpserverport = 587
 	smtpencryption = tls
 	smtpuser = adrien
+	aliasesFile = /home/kooda/.gitaliases
+	aliasesFileType = mutt
 [alias]
 	ci = commit
 	co = checkout
