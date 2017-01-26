@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+if [ -z "${1}" ]; then
+    echo "usage: `basename "${0}"` version" >&2
+    exit 1;
+fi
+
+if [ -z "$CHICKENS" ]; then
+    echo "The CHICKENS variable must be defined" >&2
+    exit 1
+fi
+
+if [ ! -d "$CHICKENS" ]; then
+    echo "The $CHICKENS directory doesn’t exist" >&2
+    exit 1
+fi
+
+cd $CHICKENS
+
+if [ -d "${CHICKENS}/${1}" ]; then
+    rm -f current;
+    ln -s "${1}" current
+else
+    echo "CHICKEN ${1} is not in the coop!" >&2
+    exit 1
+fi
