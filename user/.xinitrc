@@ -2,7 +2,7 @@
 xrdb $HOME/.Xresources
 
 # Color temperature
-# redshift -l 48.114722:-1.679444 &
+redshift -l 48.114722:-1.679444 -t5500:3300 &
 
 # Clipboard management
 autocutsel -fork
