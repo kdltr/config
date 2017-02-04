@@ -14,7 +14,7 @@ open_ma() {
     DIR=$1
     cd $DIR
     WIN_NAME=`basename $PWD`
-    TERM=dumb ma -use $XID -- -eval 'source ~/code/ma/utils/irc.tcl' -scroll -win irc-read -n +1 -f out &
+    TERM=dumb ma -use $XID -- -eval 'source ~/code/ma/utils/irc.tcl' -scroll -win irc-read out &
     echo MA-$! >MA
 }
 
