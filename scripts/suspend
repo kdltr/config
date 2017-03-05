@@ -1,4 +1,6 @@
 #!/bin/sh
 
-slock &
-sleep 1; sudo pm-suspend
+pkill ii
+ssh-add -D
+
+slock sudo pm-suspend

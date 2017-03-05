@@ -1,12 +1,9 @@
 # Terminal config
 xrdb $HOME/.Xresources
 
-# Color temperature
-redshift -l 48.114722:-1.679444 -t5500:3300 &
-
 # Clipboard management
-autocutsel -fork
-autocutsel -selection PRIMARY -fork
+#autocutsel -fork
+#autocutsel -selection PRIMARY -fork
 
 # keyboard config
 setxkbmap -option compose:caps
@@ -15,6 +12,7 @@ setxkbmap -option compose:caps
 $HOME/.fehbg
 while true; do
     xsetroot -name "`date` `uptime|awk -F, '{print $2}'`"
+    redshift -l 48.114722:-1.679444 -t5500:3000 -m randr -o
     sleep 15
 done &
 
