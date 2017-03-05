@@ -1,0 +1,2 @@
+document_root=/tmp/web
+darkhttpd_args="--ipv6"
