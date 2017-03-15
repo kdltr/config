@@ -1,0 +1,9 @@
+;; Silence library loading 
+(load-verbose #f)
+
+(use parley)
+(let ((old-port (current-input-port)))
+  (current-input-port (make-parley-port old-port)))
+
+;; Restore library loading messages
+(load-verbose #t)
