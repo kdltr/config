@@ -15,5 +15,3 @@
 	co = checkout
 	br = branch
 	st = status
-[color]
-	diff = false
