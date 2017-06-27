@@ -1,3 +1,4 @@
+export ENV=$HOME/.env
 . $HOME/.env
 
 alsactl -f ~/.alsa_state restore
